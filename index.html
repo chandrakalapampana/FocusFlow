@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="FocusFlow - Modern Student Productivity OS"
+    >
+
+    <meta
+        name="theme-color"
+        content="#080b14"
+    >
+
+    <title>FocusFlow — Student Productivity OS</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+</head>
+
+
+<body>
+
+    <!-- ======================================
+         APPLICATION
+    ======================================= -->
+
+    <div class="app">
+
+
+        <!-- ==================================
+             SIDEBAR
+        =================================== -->
+
+        <aside class="sidebar">
+
+            <!-- Brand -->
+
+            <div class="brand">
+
+                <div class="brand-icon">
+                    ◉
+                </div>
+
+                <div>
+
+                    <h2>
+                        FocusFlow
+                    </h2>
+
+                    <span>
+                        Student OS
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Navigation -->
+
+            <nav class="navigation">
+
+                <a
+                    href="#dashboard"
+                    class="nav-link active"
+                >
+                    🏠
+                    <span>
+                        Dashboard
+                    </span>
+                </a>
+
+
+                <a
+                    href="#tasks"
+                    class="nav-link"
+                >
+                    ✅
+                    <span>
+                        Tasks
+                    </span>
+                </a>
+
+
+                <a
+                    href="#focus"
+                    class="nav-link"
+                >
+                    ⏱️
+                    <span>
+                        Focus
+                    </span>
+                </a>
+
+
+                <a
+                    href="#habits"
+                    class="nav-link"
+                >
+                    🔥
+                    <span>
+                        Habits
+                    </span>
+                </a>
+
+
+                <a
+                    href="#notes"
+                    class="nav-link"
+                >
+                    📝
+                    <span>
+                        Notes
+                    </span>
+                </a>
+
+            </nav>
+
+
+            <!-- Sidebar Bottom -->
+
+            <div class="sidebar-bottom">
+
+                <div class="streak-card">
+
+                    <span>
+                        Current Streak
+                    </span>
+
+                    <strong id="sidebarStreak">
+                        0 days 🔥
+                    </strong>
+
+                </div>
+
+
+                <button
+                    id="themeBtn"
+                    class="theme-btn"
+                >
+                    ☀️ Light Mode
+                </button>
+
+            </div>
+
+        </aside>
+
+
+
+        <!-- ==================================
+             MAIN CONTENT
+        =================================== -->
+
+        <main class="main-content">
+
+
+            <!-- ==================================
+                 TOP BAR
+            =================================== -->
+
+            <header class="topbar">
+
+
+                <!-- Mobile Menu -->
+
+                <button
+                    class="mobile-menu"
+                    aria-label="Open menu"
+                >
+                    ☰
+                </button>
+
+
+                <!-- Page Information -->
+
+                <div class="page-info">
+
+                    <span>
+                        Student Productivity OS
+                    </span>
+
+                    <strong id="currentDate">
+                        Today
+                    </strong>
+
+                </div>
+
+
+                <!-- Top Actions -->
+
+                <div class="top-actions">
+
+
+                    <!-- Notifications -->
+
+                    <button
+                        class="icon-btn"
+                        id="notificationBtn"
+                        aria-label="Notifications"
+                        title="Notifications"
+                    >
+                        🔔
+                    </button>
+
+
+                    <!-- Profile -->
+
+                    <button
+                        class="profile"
+                        id="profileBtn"
+                        aria-label="Profile"
+                        title="Profile"
+                    >
+                        C
+                    </button>
+
+                </div>
+
+            </header>
+
+
+
+            <!-- ==================================
+                 DASHBOARD
+            =================================== -->
+
+            <section
+                id="dashboard"
+                class="page active"
+            >
+
+
+                <!-- Hero -->
+
+                <div class="hero">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            YOUR WORKSPACE
+                        </span>
+
+                        <h1>
+                            Good morning, Chandrakala 👋
+                        </h1>
+
+                        <p>
+                            Plan less. Focus better. Finish what matters.
+                        </p>
+
+                    </div>
+
+
+                    <!-- Quote -->
+
+                    <div class="quote-card">
+
+                        <span>
+                            💡 Today's thought
+                        </span>
+
+                        <p id="quote">
+                            Small progress is still progress.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ==================================
+                     STATISTICS
+                =================================== -->
+
+                <div class="stats">
+
+
+                    <!-- Tasks -->
+
+                    <div class="stat-card">
+
+                        <span>
+                            📋 Tasks
+                        </span>
+
+                        <strong id="taskCount">
+                            0
+                        </strong>
+
+                        <small>
+                            Total tasks
+                        </small>
+
+                    </div>
+
+
+                    <!-- Progress -->
+
+                    <div class="stat-card">
+
+                        <span>
+                            📈 Progress
+                        </span>
+
+                        <strong id="progress">
+                            0%
+                        </strong>
+
+                        <small>
+                            Completed
+                        </small>
+
+                    </div>
+
+
+                    <!-- Focus -->
+
+                    <div class="stat-card">
+
+                        <span>
+                            ⏱️ Focus
+                        </span>
+
+                        <strong id="focusSessions">
+                            0
+                        </strong>
+
+                        <small>
+                            Sessions
+                        </small>
+
+                    </div>
+
+
+                    <!-- Streak -->
+
+                    <div class="stat-card">
+
+                        <span>
+                            🔥 Streak
+                        </span>
+
+                        <strong id="streak">
+                            0
+                        </strong>
+
+                        <small>
+                            Days
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ==================================
+                     DASHBOARD GRID
+                =================================== -->
+
+                <div class="dashboard-grid">
+
+
+                    <!-- Priority Tasks -->
+
+                    <div class="card">
+
+                        <div class="card-header">
+
+                            <div>
+
+                                <span class="eyebrow">
+                                    TODAY
+                                </span>
+
+                                <h2>
+                                    Priority Tasks
+                                </h2>
+
+                            </div>
+
+
+                            <button
+                                class="text-btn"
+                                id="viewTasksBtn"
+                            >
+                                View all →
+                            </button>
+
+                        </div>
+
+
+                        <div
+                            id="dashboardTasks"
+                            class="task-preview"
+                        >
+
+                            <div class="empty-state">
+
+                                ✨ No tasks yet.
+
+                                <br>
+
+                                Add your first task!
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Focus Preview -->
+
+                    <div class="card focus-card">
+
+                        <div class="card-header">
+
+                            <div>
+
+                                <span class="eyebrow">
+                                    FOCUS MODE
+                                </span>
+
+                                <h2>
+                                    Pomodoro
+                                </h2>
+
+                            </div>
+
+
+                            <span class="status">
+                                READY
+                            </span>
+
+                        </div>
+
+
+                        <div
+                            class="timer-preview"
+                            id="dashboardTimer"
+                        >
+                            25:00
+                        </div>
+
+
+                        <div class="progress-bar">
+
+                            <span></span>
+
+                        </div>
+
+
+                        <p>
+                            Ready for a focused session.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ==================================
+                 TASKS PAGE
+            =================================== -->
+
+            <section
+                id="tasks"
+                class="page"
+            >
+
+
+                <div class="section-title">
+
+                    <span class="eyebrow">
+                        ORGANIZE
+                    </span>
+
+                    <h1>
+                        Tasks
+                    </h1>
+
+                    <p>
+                        Turn your plans into small, finishable actions.
+                    </p>
+
+                </div>
+
+
+
+                <!-- Add Task -->
+
+                <div class="card add-task">
+
+                    <input
+                        type="text"
+                        id="taskInput"
+                        placeholder="What do you want to finish?"
+                        autocomplete="off"
+                    >
+
+
+                    <select id="priority">
+
+                        <option value="High">
+                            High Priority
+                        </option>
+
+                        <option
+                            value="Medium"
+                            selected
+                        >
+                            Medium Priority
+                        </option>
+
+                        <option value="Low">
+                            Low Priority
+                        </option>
+
+                    </select>
+
+
+                    <button id="addTask">
+                        + Add Task
+                    </button>
+
+                </div>
+
+
+
+                <!-- Filters -->
+
+                <div class="filters">
+
+                    <button
+                        class="filter active"
+                        data-filter="all"
+                    >
+                        All
+                    </button>
+
+
+                    <button
+                        class="filter"
+                        data-filter="active"
+                    >
+                        Active
+                    </button>
+
+
+                    <button
+                        class="filter"
+                        data-filter="completed"
+                    >
+                        Completed
+                    </button>
+
+                </div>
+
+
+
+                <!-- Task List -->
+
+                <div class="card">
+
+                    <div id="taskList">
+
+                        <div class="empty-state">
+
+                            Your tasks will appear here.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ==================================
+                 FOCUS PAGE
+            =================================== -->
+
+            <section
+                id="focus"
+                class="page"
+            >
+
+
+                <div class="section-title">
+
+                    <span class="eyebrow">
+                        DEEP WORK
+                    </span>
+
+                    <h1>
+                        Focus Timer
+                    </h1>
+
+                    <p>
+                        Work in focused sessions and take meaningful breaks.
+                    </p>
+
+                </div>
+
+
+
+                <div class="focus-layout">
+
+
+                    <!-- Timer -->
+
+                    <div class="card timer-card">
+
+                        <div class="timer-circle">
+
+                            <div>
+
+                                <span>
+                                    FOCUS
+                                </span>
+
+                                <strong>
+                                    25:00
+                                </strong>
+
+                                <small>
+                                    0 sessions
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="timer-buttons">
+
+                            <button
+                                id="startTimer"
+                            >
+                                ▶ Start
+                            </button>
+
+
+                            <button
+                                id="resetTimer"
+                            >
+                                ↻ Reset
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Focus Playbook -->
+
+                    <div class="card">
+
+                        <span class="eyebrow">
+                            FOCUS PLAYBOOK
+                        </span>
+
+                        <h2>
+                            Make the next 25 minutes count.
+                        </h2>
+
+
+                        <ul class="tips">
+
+                            <li>
+                                Put your phone away.
+                            </li>
+
+                            <li>
+                                Choose one task before starting.
+                            </li>
+
+                            <li>
+                                Avoid multitasking.
+                            </li>
+
+                            <li>
+                                Take a short break afterwards.
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ==================================
+                 HABITS PAGE
+            =================================== -->
+
+            <section
+                id="habits"
+                class="page"
+            >
+
+
+                <div class="section-title">
+
+                    <span class="eyebrow">
+                        CONSISTENCY
+                    </span>
+
+                    <h1>
+                        Habit Tracker
+                    </h1>
+
+                    <p>
+                        Small habits become big results.
+                    </p>
+
+                </div>
+
+
+
+                <!-- Add Habit -->
+
+                <div class="card add-task">
+
+                    <input
+                        type="text"
+                        id="habitInput"
+                        placeholder="Example: Read 20 minutes"
+                        autocomplete="off"
+                    >
+
+
+                    <button
+                        id="addHabit"
+                    >
+                        + Add Habit
+                    </button>
+
+                </div>
+
+
+
+                <!-- Habit List -->
+
+                <div
+                    id="habitList"
+                    class="habit-grid"
+                >
+
+                    <div class="empty-state">
+
+                        🔥 Create your first habit.
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ==================================
+                 NOTES PAGE
+            =================================== -->
+
+            <section
+                id="notes"
+                class="page"
+            >
+
+
+                <div class="section-title">
+
+                    <span class="eyebrow">
+                        QUICK CAPTURE
+                    </span>
+
+                    <h1>
+                        Notes
+                    </h1>
+
+                    <p>
+                        Save ideas, reminders and study points.
+                    </p>
+
+                </div>
+
+
+
+                <div class="notes-grid">
+
+
+                    <!-- New Note -->
+
+                    <div class="card">
+
+                        <span class="eyebrow">
+                            NEW NOTE
+                        </span>
+
+
+                        <input
+                            class="note-title"
+                            type="text"
+                            placeholder="Note title"
+                            autocomplete="off"
+                        >
+
+
+                        <textarea
+                            placeholder="Write your note here..."
+                        ></textarea>
+
+
+                        <button>
+                            💾 Save Note
+                        </button>
+
+                    </div>
+
+
+
+                    <!-- Saved Notes -->
+
+                    <div class="card">
+
+                        <div class="card-header">
+
+                            <div>
+
+                                <span class="eyebrow">
+                                    YOUR NOTES
+                                </span>
+
+                                <h2>
+                                    Saved Notes
+                                </h2>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="empty-state">
+
+                            📝
+
+                            <br>
+
+                            No saved notes yet.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ==================================
+                 FOOTER
+            =================================== -->
+
+            <footer>
+
+                FocusFlow © 2026
+
+                <br>
+
+                Built with HTML, CSS & JavaScript
+
+            </footer>
+
+
+        </main>
+
+    </div>
+
+
+
+    <!-- ======================================
+         JAVASCRIPT
+    ======================================= -->
+
+    <script src="js/storage.js"></script>
+
+    <script src="js/quotes.js"></script>
+
+    <script src="js/tasks.js"></script>
+
+    <script src="js/habits.js"></script>
+
+    <script src="js/timer.js"></script>
+
+    <script src="js/app.js"></script>
+
+
+</body>
+
+</html>
